@@ -1,0 +1,67 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MQTT Broker (Generic)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/demo_mqtt_broker.py",
+            "args": [
+                "--mode",
+                "generic",
+                "--client-ca",
+                "${workspaceFolder}/client-ca"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "MQTT Broker (AWS-style)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/demo_mqtt_broker.py",
+            "args": [
+                "--mode",
+                "aws",
+                "--client-ca",
+                "${workspaceFolder}/client-ca"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "MQTT Broker (Azure-style)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/demo_mqtt_broker.py",
+            "args": [
+                "--mode",
+                "azure",
+                "--client-ca",
+                "${workspaceFolder}/client-ca"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "MQTT Test Client device001 (Generic)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "examples.device_simulator",
+            "args": [
+                "--identity",
+                "device001",
+                "--broker",
+                "localhost",
+                "--mode",
+                "generic"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

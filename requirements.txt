@@ -1,0 +1,7 @@
+amqtt
+paho-mqtt
+cryptography
+colorama
+pytest
+pytest-asyncio
+pytest-cov
