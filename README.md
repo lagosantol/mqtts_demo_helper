@@ -84,6 +84,27 @@ python -m pip install mqtts_demo_helper
 The distribution provides the `demo-mqtt-broker`,
 `demo-mqtt-test-client`, and `demo-mqtt-create-device-certificate` commands.
 
+## Publishing to PyPI
+
+The GitHub Actions workflow runs tests on Linux and Windows and builds the
+distribution. Publishing a GitHub Release triggers a PyPI upload after the
+tests and package checks pass; ordinary pushes and pull requests do not publish.
+
+Before the first release, configure a PyPI Trusted Publisher for
+`mqtts_demo_helper` (or a pending publisher if the project does not yet exist):
+
+1. In PyPI's publishing settings, select GitHub as the publisher and enter
+   owner `lagosantol`, repository `mqtts_demo_helper`, workflow `workflow.yml`,
+   and environment `pypi`.
+2. In GitHub, create the `pypi` environment under repository settings and
+   configure any desired environment protection rules.
+3. Update the version in `pyproject.toml` to a version not already on PyPI,
+   push that change, and publish a GitHub Release from that commit.
+
+The workflow uses GitHub's OIDC identity to authenticate with PyPI; no PyPI
+API token needs to be stored in the repository. See the
+[PyPI Trusted Publishers documentation](https://docs.pypi.org/trusted-publishers/).
+
 Linux/macOS:
 
 ```bash
